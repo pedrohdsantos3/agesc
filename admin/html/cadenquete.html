@@ -1,0 +1,104 @@
+<section id="main-content">
+	<section class="wrapper">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+				<section class="panel">
+					<header class="panel-heading">
+						Nova Enquete
+					</header>
+					<form action="{ACTION}" enctype="multipart/form-data" method="post" role="form">
+						<div class="panel-body">
+							<!-- BEGIN BLOCK_MSG -->
+							<div role="alert" class="alert alert-danger">
+								<ul>
+									<li><label>{MSG}</label></li>
+								</ul>
+							</div>
+							<!-- END BLOCK_MSG -->
+							<div class="position-center">
+								<div class="form-group">
+									<div class="icheck">
+										<div class="square-yellow single-row">
+											<div class="checkbox">
+												<input type="checkbox" {STATUS} name="ativo" id="ativo">
+												<label class="control-label" for="ativo">Ativo?</label>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label" for="titulo">Título<span class="color-red"> *</span></label>
+									<input class="form-control" id="titulo" name="titulo" placeholder="Título" type="text" value="{TITULO}" required>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label" for="tipo">Tipo da Enquete<span class="color-red"> *</span></label>
+									<select class="form-control m-bot15" name="tipo" id="tipo" required>
+										<option {TIPO1} value="1">Única escolha</option>
+										<option {TIPO2} value="2">Múltipla escolha</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label" for="item1">Escolhas:</label>
+									<label for="item1" class="control-label">Opção 1<span class="color-red"> *</span></label>
+									<input type="text" class="form-control" id="item1" name="ie_titulo[]" placeholder="Opção 1" value="{ESCOLHA1}" required>
+								</div>
+
+								<div class="form-group">
+									<label for="item2" class="control-label">Opção 2<span class="color-red"> *</span></label>
+									<input type="text" class="form-control" id="item2" name="ie_titulo[]" placeholder="Opção 2" value="{ESCOLHA2}" required>
+								</div>
+
+								<div class="form-group">
+									<label for="item3" class="control-label">Opção 3</label>
+									<input type="text" class="form-control" id="item3" name="ie_titulo[]" placeholder="Opção 3" value="{ESCOLHA3}" >
+								</div>
+
+								<div class="form-group">
+									<label for="item4" class="control-label">Opção 4</label>
+									<input type="text" class="form-control" id="item4" name="ie_titulo[]" placeholder="Opção 4" value="{ESCOLHA4}" >
+								</div>
+
+								<div class="form-group">
+									<label for="item5" class="control-label">Opção 5</label>
+									<input type="text" class="form-control" id="item5" name="ie_titulo[]" placeholder="Opção 5" value="{ESCOLHA5}" >
+								</div>
+
+								<div class="form-group">
+									<label for="item6" class="control-label">Opção 6</label>
+									<input type="text" class="form-control" id="item6" name="ie_titulo[]" placeholder="Opção 6" value="{ESCOLHA6}" >
+								</div>
+
+								<div class="form-group">
+									<label for="item7" class="control-label">Opção 7</label>
+									<input type="text" class="form-control" id="item7" name="ie_titulo[]" placeholder="Opção 7" value="{ESCOLHA7}" >
+								</div>
+
+								<div class="form-group">
+									<label for="item8" class="control-label">Opção 8</label>
+									<input type="text" class="form-control" id="item8" name="ie_titulo[]" placeholder="Opção 8" value="{ESCOLHA8}" >
+								</div>
+
+								<div class="form-group">
+									<label for="item9" class="control-label">Opção 9</label>
+									<input type="text" class="form-control" id="item9" name="ie_titulo[]" placeholder="Opção 9" value="{ESCOLHA9}" >
+								</div>
+
+								<div class="form-group">
+									<label for="item10" class="control-label">Opção 10</label>
+									<input type="text" class="form-control" id="item10" name="ie_titulo[]" placeholder="Opção 10" value="{ESCOLHA10}" >
+								</div>
+
+							</div>
+						</div>
+						<div class="panel-footer">
+							<button class="btn btn-success form-control" name="cadastrar" id="cadastrar" type="submit">{NOMEACTION}</button>
+						</div>
+					</form>
+				</section>
+			</div>
+		</div>
+	</section>
+</section>

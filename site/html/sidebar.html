@@ -1,0 +1,112 @@
+	<aside id="sidebar">
+		<div class="widget row">
+			<form method="post" class="search-form row-fluid" action="search.php">
+				<label class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+					<span class="screen-reader-text">Buscar por:</span>
+					<input type="search" name="busca" class="search-field" placeholder="Buscar por:" title="Buscar por:" required />
+				</label>
+				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+					<input type="submit" class="search-submit screen-reader-text " value="Buscar">
+				</div>
+			</form>
+		</div>
+		<!-- BEGIN BLOCK_ENQUETE -->
+		<div class="widget enquete">
+			<h3>Enquete</h3>
+			<div class="widget-content">
+				<div class="panel panel-default">
+					<form action="" id="formPoll" method="POST" name="formPoll">
+						<div class="panel-heading">
+							<h3 class="panel-title">{POLL_TITLE}</h3>
+						</div>
+						<div class="panel-body">
+							<ul class="list-group">
+								<!-- BEGIN BLOCK_ITENSENQUETE -->
+								<li class="list-group-item">
+									<div class="{POLL_TYPE}">
+										<label>
+											<input type="{POLL_TYPE}" value="{POLL_ITEMVALOR}" name="poll_options[]">{POLL_ITEMNAME}
+										</label>
+									</div>
+								</li>
+								<!-- END BLOCK_ITENSENQUETE -->
+							</ul>
+						</div>
+						<div class="panel-footer">
+							<button type="submit" name="poll_submit" value="Votar" class="btn btn-success btn-sm">
+								<span class="glyphicon glyphicon-ok"></span>Votar
+							</button>
+							<!-- <button type="button" name="poll_result" value="Resultado" class="btn btn-primary btn-sm pull-right">Ver Resultado</button> -->
+						</div>
+						<input type="hidden" name="poll_id" value="{POLL_ID}">
+					</form>
+				</div>
+			</div>
+			<!-- <div id="pollModal" class="modal fade">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">×</span> <span class="sr-only">Fechar</span>
+							</button>
+							<h4 id="modalTitle" class="modal-title">Resultado</h4>
+						</div>
+						<div id="modalBody" class="modal-body">
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+						</div>
+					</div>
+				</div>
+			</div> -->
+		</div>
+		<!-- END BLOCK_ENQUETE -->
+
+		<div class="widget">
+			<h3>Menu Principal</h3>
+			<ul class="menu">
+				<!-- BEGIN BLOCK_MENUPRINCIPAL -->
+				<li><a href="pagina.php?c={ARQUIVO}">{TITLEPAGE}</a></li>
+				<!-- END BLOCK_MENUPRINCIPAL -->
+				<li><a href="noticias.php">Posts</a></li>
+				<li><a href="archive.php">Biblioteca</a></li>
+			</ul>
+		</div>
+
+	<!--
+		<div class="widget">
+			<h3>Curta-nos no Facebook</h3>
+			<div class="widget-content ot-w-socialize">
+				<div class="fb-page" data-href="https://www.facebook.com/Sindasp-Sindicato-dos-Agentes-Penitenci%C3%A1rios-SP-136102816452112/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
+			</div>
+		</div>
+		<div class="widget widget-ads">
+			<div class="widget-content">
+				<a href="#" ><img src="images/o2.jpg" alt="" /></a>
+			</div>
+		</div>-->
+		<div class="widget">
+			<h3>Mais Lidas</h3>
+			<div class="widget-content ot-w-article-list">
+				<!-- BEGIN BLOCK_ITEMSIDEBARLIDAS -->
+				<div class="item">
+					<div class="item-header">
+						<a href="post.php?id={ID_MLD}" class="img-read-later-button rm-btn-small">Leia mais</a>
+						<a href="post.php?id={ID_MLD}"><img style="max-width:80px; max-height:80px; object-fit:cover;" src="{IMGMLD}" alt="" /></a>
+					</div>
+					<div class="item-content">
+						<h4><a href="post.php?id={ID_MLD}">{TITULO_MLD}</a></h4>
+						<span class="item-meta">
+							<span class="item-meta-item"><i class="material-icons">access_time</i>{DATE_MLD}</span>
+						</span>
+					</div>
+				</div>
+				<!-- END BLOCK_ITEMSIDEBARLIDAS -->
+			</div>
+		</div>
+
+		<!-- END BLOCK_GALERIAS -->
+	</aside>
+</div>
+</div>
+</div>

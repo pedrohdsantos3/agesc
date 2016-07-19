@@ -1,0 +1,7 @@
+Options /html -Indexes
+ErrorDocument 404 /site/404.php
+
+DirectoryIndex index.php
+
+RewriteEngine On
+RewriteBase /site

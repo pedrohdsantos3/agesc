@@ -1,0 +1,309 @@
+			<!-- BEGIN #footer -->
+			<footer id="footer">
+				
+				<!-- BEGIN .wrapper -->
+				<div class="wrapper">
+
+
+
+					<div class="footer-copyright">
+						<p>&copy; <a href="http://orange-themes.com" target="_blank">AGESC</a> 2016. All rights reserved.</p>
+					</div>
+					
+				<!-- END .wrapper -->
+				</div>
+				
+			<!-- END #footer -->
+			</footer>
+
+			<div class="ot-follow-share">
+				<a href="#" class="ot-color-facebook" data-h-title="Facebook"><i class="fa fa-facebook"></i></a>
+				<a href="#" class="ot-color-twitter" data-h-title="Twitter"><i class="fa fa-twitter"></i></a>
+
+			</div>
+
+			<div class="ot-responsive-menu-header">
+				<a href="#" class="ot-responsive-menu-header-burger"><i class="material-icons">menu</i></a>
+				<a href="index.html" class="ot-responsive-menu-header-logo"><img src="images/logo.png" alt="" /></a>
+			</div>
+			
+		<!-- END .boxed -->
+		</div>
+
+		<div class="ot-responsive-menu-content-c-header">
+			<a href="#" class="ot-responsive-menu-header-burger"><i class="material-icons">menu</i></a>
+		</div>
+		<div class="ot-responsive-menu-content">
+			<div class="ot-responsive-menu-content-inner has-search">
+				<form action="blog.html" method="get">
+					<input type="text" value="" placeholder="Search" />
+					<button type="submit"><i class="fa fa-search"></i></button>
+				</form>
+				<ul id="responsive-menu-holder"></ul>
+			</div>
+		</div>
+		<div class="ot-responsive-menu-background"></div>
+
+		<!-- Scripts -->
+		<script type="text/javascript" src="jscript/jquery-latest.min.js"></script>
+		<script type="text/javascript" src="jscript/bootstrap.min.js"></script>
+		<script type="text/javascript" src="jscript/theia-sticky-sidebar.min.js"></script>
+		<script type="text/javascript" src="jscript/modernizr.js"></script>
+		<script type="text/javascript" src="jscript/owl.carousel.min.js"></script>
+		<script type="text/javascript" src="jscript/shortcode-scripts.min.js"></script>
+		<script type="text/javascript" src="jscript/theme-scripts.min.js"></script>
+		<script type="text/javascript" src="jscript/ot-lightbox.min.js"></script>
+		<!-- BEGIN BLOCK_JSMAINSLIDER -->
+		<script>
+			// jQuery('.main-slider-owl').owlCarousel({
+			// 	margin: 20,
+			// 	responsiveClass: true,
+			// 	items: 1,
+			// 	nav: true,
+			// 	dots: false,
+			// 	loop: true,
+			// 	autoplay: true,
+			// 	autoplayTimeout: 5000,
+			// 	autoplayHoverPause: true,
+			// 	animateOut: 'slideOutDown',
+			// 	animateIn: 'slideInDown'
+			// });
+
+
+			jQuery('.main-slider-owl').owlCarousel({
+				margin: 20,
+				responsiveClass: true,
+				nav: true,
+				dots: false,
+				loop: true,
+				autoplay: true,
+				autoplayTimeout: 5000,
+				autoplayHoverPause: true,
+				responsive: {
+					0: {
+						items: 1
+					},
+					600: {
+						items: 2
+					}
+				}
+			});
+		</script>
+		<!-- END BLOCK_JSMAINSLIDER -->
+
+		<!-- BEGIN BLOCK_JSAGENDA -->
+		<script type="text/javascript" src="jscript/moment.min.js"></script>
+		<script type="text/javascript" src="jscript/fullcalendar.min.js"></script>
+		<script type="text/javascript" src="jscript/lang/pt-br.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+				jQuery('#agenda').fullCalendar({
+					header: {
+						left   : 'prev,next today',
+						center : 'title',
+						right  : 'month,agendaWeek,agendaDay'
+					},
+					events : [
+						{JS_ITENS_AGENDA}
+					],
+					eventClick:  function(event, jsEvent, view) {
+						jQuery('#modalTitle').html(event.title);
+						jQuery('#startTime').html(moment(event.start).format("DD/MM/YYYY - HH:mm"));
+						if(moment(event.end).isValid())
+							jQuery('#endTime').html(moment(event.end).format("DD/MM/YYYY - HH:mm"));
+						else
+							jQuery('#endTime').html("Não há");
+						jQuery('#description').html(event.description);
+						jQuery('#agendaModal').modal();
+					},
+				});
+			});
+		</script>
+		<!-- END BLOCK_JSAGENDA -->
+
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+				jQuery('#btn_enviaremail').click(function(){
+					if(jQuery("#contato")[0].checkValidity()) {
+						jQuery(".contato-loading").show();
+						var nome, email, mensagem;
+						nome = jQuery('#contato #nomeemail').val();
+						email = jQuery('#contato #email').val();
+						mensagem = jQuery('#contato #mensagem').val();
+
+						jQuery('#contato .error-empty').fadeOut();
+						jQuery.ajax({
+							url         : 'formulario.php',
+							contentType : "application/json; charset=utf-8",
+							dataType    : 'jsonp',
+							data        : {
+								'nome'     : nome,
+								'email'    : email,
+								'mensagem' : mensagem
+							},
+							complete: function(result){
+								jQuery(".contato-loading").hide();
+								var resultTxt = JSON.parse(result.responseText);
+								if(result.status == 200 && result.statusText == 'OK'){
+									jQuery('#contato .alert-success').html(resultTxt.msg);
+									jQuery('#contato .alert-success').fadeIn(function(){
+										jQuery(this).fadeOut(5000);
+									});
+								} else {
+									jQuery('#contato .alert-danger').html(resultTxt.msg);
+									jQuery('#contato .alert-danger').fadeIn(function(){
+										jQuery(this).fadeOut(5000);
+									});
+								}
+								jQuery('#contato #nomeemail').val('');
+								jQuery('#contato #email').val('');
+								jQuery('#contato #mensagem').val('');
+							}
+						});
+					} else {
+						jQuery(".contato-loading").hide();
+						jQuery('#contato .error-empty').fadeIn(function(){
+							jQuery(this).fadeOut(5000);
+						});
+					}
+				});
+
+				jQuery('#btn_enviarnewsletter').click(function(){
+					if(jQuery("#newsletter")[0].checkValidity()) {
+						jQuery(".newsletter-loading").show();
+						var nome, email, whatsapp;
+						nome = jQuery('#newsletter #nome').val();
+						email = jQuery('#newsletter #email').val();
+						whatsapp = jQuery('#newsletter #whatsapp').val();
+
+						jQuery('#newsletter .error-empty').fadeOut();
+						jQuery.ajax({
+							url         : 'newsletter.php',
+							contentType : "application/json; charset=utf-8",
+							dataType    : 'jsonp',
+							async       : false,
+							data        : {
+								'nome'     : nome,
+								'email'    : email,
+								'whatsapp' : whatsapp
+							},
+							complete: function(result){
+								jQuery(".newsletter-loading").hide();
+								var resultTxt = JSON.parse(result.responseText);
+								if(result.status == 200 && result.statusText == 'OK'){
+									jQuery('#newsletter .alert-success').html(resultTxt.msg);
+									jQuery('#newsletter .alert-success').fadeIn(function(){
+										jQuery(this).fadeOut(10000);
+									});
+								} else {
+									if(resultTxt.code == "duplicado"){
+										jQuery('#newsletter .alert-info').html(resultTxt.msg);
+										jQuery('#newsletter .alert-info').fadeIn(function(){
+											jQuery(this).fadeOut(10000);
+										});
+									} else {
+										jQuery('#newsletter .alert-danger').html(resultTxt.msg);
+										jQuery('#newsletter .alert-danger').fadeIn(function(){
+											jQuery(this).fadeOut(5000);
+										});
+									}
+								}
+								jQuery('#newsletter #nome').val('');
+								jQuery('#newsletter #email').val('');
+								jQuery('#newsletter #whatsapp').val('');
+							}
+						});
+					} else {
+						jQuery(".newsletter-loading").hide();
+						jQuery('#newsletter .error-empty').fadeIn(function(){
+							jQuery(this).fadeOut(5000);
+						});
+					}
+				});
+
+				jQuery('.mascara-cpf').mask('000.000.000-00', {placeholder: "___.___.___-__"});
+				jQuery('.mascara-cnpj').mask('00000000000000', {placeholder: "______________"});
+				jQuery('.mascara-telefone').mask('(00)0000-0000' , {placeholder: "(__)____-____"});
+				jQuery('.mascara-celular').mask('(00)00000-0000' , {placeholder: "(__)_____-____"});
+				jQuery('.mascara-data').mask('00/00/0000' , {placeholder: "__/__/____"});
+				// jQuery('.mascara-rg').mask('000000000', {placeholder: "RG"});
+				jQuery('.mascara-cep').mask('00000-000' , {placeholder: "_____-___"});
+				jQuery('.mascara-dinheiro').mask("000.000.000.000.000,00", {placeholder: "R$ 0.000,00"}, {reverse: true});
+
+				jQuery('#addmore').on('click', function () {
+					var $table = jQuery('#flip-scroll #input_fields');
+					var $tr = $table.find('tr').eq(0).clone();
+					$tr.appendTo($table);
+					$tr.find('input.nome_dep').attr('id', 'nome_dep[]').attr('name', 'nome_dep[]').val('');
+					$tr.find('input.dtnasc_dep').attr('id', 'dtnasc_dep[]').attr('name', 'dtnasc_dep[]').val('');
+					// document.querySelector('button.removedp').addEventListener('click', function removeLastTr(this));
+					count = count+1;
+					$tr.find('input.nome_dep').focus();
+				});
+			});
+			var count = 1;
+
+			function removeLastTr(elem) {
+				if( count >= 2 ){
+					if ( confirm("Deseja realmente excluir esse Dependente?")) {
+						count = count-1;
+						elem.parentElement.parentElement.remove();
+					}
+				}
+			}
+
+			function buscarEndereco(elem) {
+				var cep = Trim(elem.value);
+				if(IsCEP(cep)){
+					document.getElementById('rua').value = "...";
+					document.getElementById('bairro').value = "...";
+					document.getElementById('cidade').value = "...";
+					document.getElementById('num').focus();
+					var xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function() {
+						if (xhttp.readyState == 4 && xhttp.status == 200) {
+							var r = xhttp.response;
+							street_1 = r.substring(0, (i = r.indexOf(':')));
+							document.getElementById('rua').value = unescape(street_1.replace(/\+/g," "));
+							r = r.substring(++i);
+							street_4 = r.substring(0, (i = r.indexOf(':')));
+							document.getElementById('bairro').value = unescape(street_4.replace(/\+/g," "));
+							r = r.substring(++i);
+							city = r.substring(0, (i = r.indexOf(':')));
+							document.getElementById('cidade').value = unescape(city.replace(/\+/g," "));
+							r = r.substring(++i);
+							estado = r.substring(0, (i = r.indexOf(':')));
+							document.getElementById('estado').selectedIndex = unescape(estado.replace(/\+/g," "));
+							// document.getElementById('region_id').selectedIndex = unescape(region.replace(/\+/g," "));
+						}
+					};
+					xhttp.open("GET", "buscacep.php?cep=" + cep, true);
+					xhttp.send();
+				}
+			}
+
+			function Trim(strTexto)
+			{
+				return strTexto.replace(/^s+|s+$/g, '');
+			}
+
+			function IsCEP(strCEP)
+			{
+				strCEP = Trim(strCEP);
+
+				if(strCEP.length == 8)
+					var objER = /^\d{5}\d{3}$/;
+				else if(strCEP.length == 9)
+					var objER = /^\d{5}-\d{3}$/;
+				else
+					return false;
+
+				if(objER.test(strCEP))
+					return true;
+				else
+					return false;
+			}
+
+		</script>
+	</body>
+</html>

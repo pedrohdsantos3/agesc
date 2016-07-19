@@ -1,0 +1,37 @@
+<div class="content">
+	<div class="wrapper">
+		<div class="content-wrapper">
+			<div class="composs-main-content composs-main-content-s-1">
+				<div class="composs-panel">
+					<div class="composs-panel-title">
+						<strong>Notícias Relacionadas</strong>
+					</div>
+					<div class="composs-panel-inner">
+						<div class="composs-blog-list lets-do-1">
+							<!-- BEGIN BLOCK_ITENSNOTICIASRELACIONADAS -->
+							<div class="item">
+								<h2><a href="post.php?id={POST_ID}">{TITLE_POST}</a></h2>
+								<span class="item-meta">
+									<span class="item-meta-item"><i class="material-icons">access_time</i>{DATE_POST}</span>
+								</span>
+								{RESUMO_POST}
+							</div>
+							<!-- END BLOCK_ITENSNOTICIASRELACIONADAS -->
+						</div>
+					</div>
+					<!-- BEGIN BLOCK_PAGINACAO -->
+					<div class="composs-panel-pager">
+						<!-- BEGIN BLOCK_PAGEREC -->
+						<a href="{PAGE}.php?p={PAGE_REC}" class="composs-pager-button left">
+							<i class="fa fa-angle-double-left"></i>Recentes
+						</a>
+						<!-- END BLOCK_PAGEREC -->
+						<!-- BEGIN BLOCK_PAGEANT -->
+						<a href="{PAGE}.php?p={PAGE_ANT}" class="composs-pager-button right active">
+							Anteriores<i class="fa fa-angle-double-right"></i>
+						</a>
+						<!-- END BLOCK_PAGEANT -->
+					</div>
+					<!-- END BLOCK_PAGINACAO -->
+				</div>
+			</div>

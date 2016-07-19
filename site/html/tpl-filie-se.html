@@ -1,0 +1,566 @@
+<div class="content">
+	<div class="wrapper">
+		<div class="content-wrapper">
+			<div class="composs-main-content composs-main-content-s-1">
+				<div class="theiaStickySidebar">
+					<div class="composs-panel">
+						<div class="composs-panel-title">
+							<strong>
+								Filie-se
+							</strong>
+						</div>
+						<div class="composs-panel-inner">
+							<div class="composs-main-content">
+								Digite seu dados abaixo
+								<span style="display:none;">
+									ou imprima o formulário para inscrição manual
+									<a href="propostaadesao.pdf" target="_blank">
+										clicando aqui
+									</a>
+								</span>
+								<form role="form" action="filiese.php" method="post" id="form-cad-filiados">
+									<div class="panel-body composs-panel">
+										<!-- BEGIN BLOCK_ERROS -->
+										<div role="alert" class="alert alert-danger">
+											<ul>
+												<label>
+													Verifique os seguintes campos
+												</label>
+												<li>
+													{ERRO1} {ERRO2} {ERRO3} {ERRO4} {ERRO5} {ERRO6} {ERRO7} {ERRO8} {ERRO9}
+												</li>
+											</ul>
+										</div>
+										<!-- END BLOCK_ERROS -->
+										<header class="panel-heading composs-panel-title">
+											<small>
+												Dados Básicos
+											</small>
+										</header>
+										<div class="row panel-body composs-panel-inner">
+											<div class="row composs-main-content">
+												<div class="col-lg-6 col-md-6">
+													<div class="form-group">
+														<label for="nome">
+															Nome Completo
+														</label>
+														<input class="form-control" value="{NOME}" placeholder="Digite o Nome aqui" name="nome" id="nome" maxlength="50" required/>
+													</div>
+												</div>
+												<div class="col-lg-3 col-md-3">
+													<div class="form-group">
+														<label for="rg">
+															RG
+														</label>
+														<input class="form-control" placeholder="RG" value="{RG}" name="rg" id="rg" maxlength="14" required/>
+													</div>
+												</div>
+												<div class="col-lg-3 col-md-3">
+													<div class="form-group">
+														<label for="cpf">
+															CPF
+														</label>
+														<input class="mascara-cpf form-control" placeholder="CPF" value="{CPF}" name="cpf" id="cpf" maxlength="14" required/>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-3 col-md-3">
+													<div class="form-group">
+														<label for="teleitor">
+															Titulo de Eleitor
+														</label>
+														<input class="form-control" value="{TELEITOR}" placeholder="Título de Eleitor" name="teleitor" id="teleitor" maxlength="10" required/>
+													</div>
+												</div>
+												<div class="col-lg-3 col-md-3">
+													<div class="form-group">
+														<label for="dtnasc">
+															Data de Nasc.
+														</label>
+														<input type="date" class="form-control" value="{DTNASC}" placeholder="Data de Nascimento" name="dtnasc" id="dtnasc" maxlength="10" required/>
+													</div>
+												</div>
+												<div class="col-lg-3 col-md-3">
+													<div class="form-group">
+														<label for="telr">
+															Fixo
+														</label>
+														<input class="mascara-telefone form-control" value="{TELR}" name="telr" id="telr" maxlength="15" required/>
+													</div>
+												</div>
+												<div class="col-lg-3 col-md-3">
+													<div class="form-group">
+														<label for="cel">
+															Celular
+														</label>
+														<input class="mascara-celular form-control" value="{CEL}" name="cel" id="cel" maxlength="15" required/>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-6 col-md-6">
+													<div class="form-group">
+														<label for="email">
+															Email
+														</label>
+														<input class="form-control" type="email" value="{EMAIL}" placeholder="exemplo@sindasp.com.br" name="email" id="email" maxlength="250" required/>
+													</div>
+												</div>
+												<div class="col-lg-3 col-md-3">
+													<div class="form-group">
+														<label for="sexo">
+															Sexo
+														</label>
+														<select class="form-control" name="sexo" id="sexo" required>
+															<option value="0">
+																-- Selecione --
+															</option>
+															<option value="1">
+																Masculino
+															</option>
+															<option value="2">
+																Feminino
+															</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-lg-3 col-md-3">
+													<div class="form-group">
+														<label for="estcivil">
+															Estado Civil
+														</label>
+														<select class="form-control" name="estcivil" id="estcivil" required>
+															<option value="0">
+																-- Selecione --
+															</option>
+															<option value="7">
+																Amasiado(a)
+															</option>
+															<option value="3">
+																Casado(a)
+															</option>
+															<option value="6">
+																Desquitado(a)
+															</option>
+															<option value="4">
+																Divorciado(a)
+															</option>
+															<option value="2">
+																Solteiro(a)
+															</option>
+															<option value="8">
+																União Estável
+															</option>
+															<option value="5">
+																Viúvo(a)
+															</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+										<header class="panel-heading composs-panel-title">
+											<small>
+												Dados Complementares
+											</small>
+										</header>
+										<div class="row panel-body composs-panel-inner">
+											<div class="row composs-main-content">
+												<div class="col-lg-4 col-md-4">
+													<div class="form-group">
+														<label for="whatsapp">
+															WhatsApp
+														</label>
+														<input class="mascara-celular form-control" value="{WHATS}" name="whatsapp" id="whatsapp" maxlength="15"/>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-4">
+													<div class="form-group">
+														<label for="telrecados">
+															Telefone para Recado
+														</label>
+														<input class="mascara-celular form-control" value="{TELREC}" name="telrecados" id="telrecados" maxlength="15"/>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-4">
+													<div class="form-group">
+														<label for="outrotel">
+															Outro Telefone
+														</label>
+														<input class="mascara-celular form-control" value="{OUTROTEL}" name="outrotel" id="outrotel" maxlength="15"/>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-6 col-md-6">
+													<div class="form-group">
+														<label for="facebook">
+															Facebook
+														</label>
+														<input class="form-control" value="{FACEBOOK}" placeholder="facebook" name="facebook" id="facebook"/>
+													</div>
+												</div>
+												<div class="col-lg-6 col-md-6">
+													<div class="form-group">
+														<label for="superior">
+															Curso Superior
+														</label>
+														<input class="form-control" value="{SUPERIOR}" placeholder="Curso Superior" name="superior" id="superior" maxlength="100"/>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-6 col-md-6">
+													<div class="form-group">
+														<label for="nomemae">
+															Nome da Mãe (Completo)
+														</label>
+														<input class="form-control" value="{NOMEMAE}" placeholder="Nome da Mãe" name="nomemae" id="nomemae" maxlength="50"/>
+													</div>
+												</div>
+												<div class="col-lg-6 col-md-6">
+													<div class="form-group">
+														<label for="nomepai">
+															Nome do Pai (Completo)
+														</label>
+														<input class="form-control" value="{NOMEPAI}" placeholder="Nome do Pai" name="nomepai" id="nomepai" maxlength="50"/>
+													</div>
+												</div>
+											</div>
+										</div>
+										<header class="panel-heading composs-panel-title">
+											<small>
+												Endereço Residencial
+											</small>
+										</header>
+										<div class="row panel-body composs-panel-inner">
+											<div class="row composs-main-content">
+												<div class="col-lg-3 col-md-3">
+													<div class="form-group">
+														<label for="cep">
+															CEP
+														</label>
+														<input class="form-control mascara-cep" value="{CEP}" name="cep" id="cep" onblur="javascript:buscarEndereco(this);" maxlength="9" required/>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-5 col-md-5">
+													<div class="form-group">
+														<label for="rua">
+															Rua
+														</label>
+														<input class="form-control" value="{RUA}" placeholder="Rua" name="rua" id="rua" maxlength="100" required/>
+													</div>
+												</div>
+												<div class="col-lg-3 col-md-3">
+													<div class="form-group">
+														<label for="num">
+															Número
+														</label>
+														<input class="form-control" value="{NUM}" placeholder="Número" name="num" id="num" maxlength="100" required/>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-4">
+													<div class="form-group">
+														<label for="bairro">
+															Bairro
+														</label>
+														<input class="form-control" value="{BAIRRO}" placeholder="Bairro" name="bairro" id="bairro" maxlength="100" required/>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-4 col-md-4">
+													<div class="form-group">
+														<label for="comp">
+															Complemento
+														</label>
+														<input class="form-control" value="{COMP}" placeholder="Complemento" name="comp" id="comp" maxlength="100"/>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-4">
+													<div class="form-group">
+														<label for="cidade">
+															Cidade
+														</label>
+														<input class="form-control" value="{ENDERECO}" placeholder="Cidade" name="cidade" id="cidade" maxlength="100" required/>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-4">
+													<div class="form-group">
+														<label for="estado">
+															Estado
+														</label>
+														<select class="form-control" name="estado" id="estado" required>
+															<option value="0">
+																-- Selecione --
+															</option>
+															<option {SELECTED1} value="1">
+																Acre
+															</option>
+															<option {SELECTED2} value="2">
+																Alagoas
+															</option>
+															<option {SELECTED3} value="3">
+																Amap&aacute;
+															</option>
+															<option {SELECTED4} value="4">
+																Amazonas
+															</option>
+															<option {SELECTED5} value="5">
+																Bahia
+															</option>
+															<option {SELECTED6} value="6">
+																Cear&aacute;
+															</option>
+															<option {SELECTED7} value="7">
+																Distrito Federal
+															</option>
+															<option {SELECTED8} value="8">
+																Esp&iacute;rito Santo
+															</option>
+															<option {SELECTED9} value="9">
+																Goi&aacute;s
+															</option>
+															<option {SELECTED10} value="10">
+																Maranh&atilde;o
+															</option>
+															<option {SELECTED11} value="11">
+																Mato Grosso
+															</option>
+															<option {SELECTED12} value="12">
+																Mato Grosso do Sul
+															</option>
+															<option {SELECTED13} value="13">
+																Minas Gerais
+															</option>
+															<option {SELECTED14} value="14">
+																Par&aacute;
+															</option>
+															<option {SELECTED15} value="15">
+																Para&iacute;ba
+															</option>
+															<option {SELECTED16} value="16">
+																Paran&aacute;
+															</option>
+															<option {SELECTED17} value="17">
+																Pernambuco
+															</option>
+															<option {SELECTED18} value="18">
+																Piau&iacute;
+															</option>
+															<option {SELECTED19} value="19">
+																Rio de Janeiro
+															</option>
+															<option {SELECTED20} value="20">
+																Rio Grande do Norte
+															</option>
+															<option {SELECTED21} value="21">
+																Rio Grande do Sul
+															</option>
+															<option {SELECTED22} value="22">
+																Rond&ocirc;nia
+															</option>
+															<option {SELECTED23} value="23">
+																Roraima
+															</option>
+															<option {SELECTED24} value="24">
+																Santa Catarina
+															</option>
+															<option {SELECTED25} value="25">
+																S&atilde;o Paulo
+															</option>
+															<option {SELECTED26} value="26">
+																Sergipe
+															</option>
+															<option {SELECTED27} value="27">
+																Tocantins
+															</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+										<header class="panel-heading composs-panel-title">
+											<small>
+												Unidade Prisional
+											</small>
+										</header>
+										<div class="row panel-body composs-panel-inner">
+											<div class="row composs-main-content">
+												<div class="col-lg-6 col-md-6">
+													<div class="form-group">
+														<label for="penitenciaria">
+															Unidade
+														</label>
+														<select class="form-control" name="penitenciaria" id="penitenciaria" required>
+															<!-- BEGIN BLOCK_PENITENCIARIA -->
+															<option value="{ID_PEN}">
+																{PEN}
+															</option>
+															<!-- END BLOCK_PENITENCIARIA -->
+														</select>
+													</div>
+												</div>
+												<div class="col-lg-6 col-md-6">
+													<div class="form-group">
+														<label for="cargo">
+															Cargo
+														</label>
+														<select class="form-control" name="cargo" id="cargo" required>
+															<!-- BEGIN BLOCK_CARGO -->
+															<option value="{ID_CARGO}">
+																{CARGO}
+															</option>
+															<!-- END BLOCK_CARGO -->
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-6 col-md-6">
+													<div class="form-group">
+														<label for="matricula">
+															RS (Registro Servidor)
+														</label>
+														<input class="form-control" value="{MATR}" placeholder="00000000" name="matricula" id="matricula" maxlength="15" required/>
+													</div>
+												</div>
+												<div class="col-lg-6 col-md-6">
+													<div class="form-group">
+														<label for="dtadmis">
+															Data de Admissão
+														</label>
+														<input type="date" class="form-control" name="dtadmis" id="dtadmis" maxlength="10" required/>
+													</div>
+												</div>
+											</div>
+										</div>
+										<header class="panel-heading composs-panel-title">
+											<small>
+												Dados Bancários
+											</small>
+										</header>
+										<div class="row panel-body composs-panel-inner">
+											<div class="col-lg-4 col-md-4">
+												<div class="form-group">
+													<label for="agencia">
+														Agência
+													</label>
+													<input class="form-control" placeholder="00000000" name="agencia" id="agencia" maxlength="15" required/>
+												</div>
+											</div>
+											<div class="col-lg-4 col-md-4">
+												<div class="form-group">
+													<label for="conta">
+														Conta
+													</label>
+													<input class="form-control" placeholder="00000000" name="conta" id="conta" maxlength="15" required/>
+												</div>
+											</div>
+											<div class="col-lg-4 col-md-4">
+												<div class="form-group">
+													<label for="banco">
+														Banco
+													</label>
+													<select class="form-control" name="banco" id="banco" required>
+														<option value="1">
+															Banco do Brasil
+														</option>
+														<option value="2">
+															Santander
+														</option>
+														<option value="3">
+															Bradesco
+														</option>
+														<option value="4">
+															Itaú
+														</option>
+														<option value="5">
+															HSBC
+														</option>
+														<option value="6">
+															Caixa
+														</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<header class="panel-heading composs-panel-title">
+											<small>
+												Dependentes
+											</small>
+											<span class="pull-right">
+												<button class="btn btn-xs btn-primary more" type="button" id="addmore" name="addmore">
+													<i class="fa fa-plus"></i>
+													Acrescentar
+												</button>
+											</span>
+										</header>
+										<div class="row panel-body composs-panel-inner">
+											<div class="col-lg-12">
+												<section id="flip-scroll" class="table-responsive">
+													<table id="input_fields" class="table table-hover table-striped">
+														<!-- BEGIN BLOCK_DEPENDENTE -->
+														<tr>
+															<td>
+																<label for="nome_dep[]">
+																	Nome Completo
+																</label>
+																<input class="nome_dep form-control" placeholder="Digite o nome aqui" name="nome_dep[{ID_DP}]" id="nome_dep[{ID_DP}]" value="{NOME_DP}"/>
+															</td>
+															<td>
+																<label for="dtnasc_dep[]">
+																	Data de Nascimento
+																</label>
+																<input type="date" class="dtnasc_dep form-control" name="dtnasc_dep[{ID_DP}]" id="dtnasc_dep[{ID_DP}]" value="{NASC_DP}"/>
+															</td>
+															<td>
+																<label for="removedp">
+																	Ação
+																</label>
+																<button class="removedp btn btn-danger form-control" type="button" id="removedp" name="removedp" onclick="javascript:removeLastTr(this);">
+																	<i class="fa fa-trash"></i>
+																	Remover
+																</button>
+															</td>
+														</tr>
+														<!-- END BLOCK_DEPENDENTE -->
+													</table>
+												</section>
+											</div>
+										</div>
+										<header class="panel-heading composs-panel-title">
+											<small>
+												Contrato
+											</small>
+										</header>
+										<div class="row panel-body composs-panel-inner">
+											<div class="col-lg-12">
+												<input id="chkaceito" name="chkaceito" type="checkbox" required/>
+												<label for="chkaceito">
+													Li o
+													<b>
+														<a href="pagina.php?c=p_contrato.html" target="_blank">
+															contrato
+														</a>
+													</b>
+													e aceito os Termos nele proposto.
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="panel-footer">
+										<button type="submit" name="enviar" id="enviar" class="btn btn-success">
+											Enviar Pré Cadastro
+										</button>
+									</div>
+								</form>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+			</div>

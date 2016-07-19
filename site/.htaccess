@@ -1,0 +1,8 @@
+ErrorDocument 404 /site/404.php
+
+DirectoryIndex index.php
+
+RewriteEngine On
+RewriteRule     ^posts/(.*)/?$  http://agesc-phteam.rhcloud.com/site/post.php?post_url=$1       [NC,L]
+RewriteRule	^$ /site [L]
+#RewriteBase /site

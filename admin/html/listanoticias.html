@@ -1,0 +1,70 @@
+<section id="main-content">
+	<section class="wrapper">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+				<section class="panel">
+					<header class="panel-heading">
+						<h4>
+							Lista de Notícias
+							<span class="tools">
+								<a href="cadnoticias.php" alt="Cadastrar Notícia" title="Cadastrar Notícia" class="pull-right">
+									<div class="btn btn-success">
+										<i class="fa fa-plus"></i>
+									</div>
+								</a>
+							</span>
+						</h4>
+					</header>
+					<div class="panel-body">
+						<div class="col-lg-12 col-md-12">
+							<section id="flip-scroll" class="table-responsive">
+								<table class="table table-hover table-striped">
+									<thead>
+										<tr>
+											<th>Título</th>
+											<th>Autor</th>
+											<th>Destaque</th>
+											<th>Status</th>
+											<th>Tipo</th>
+											<th class="text-center">Ações</th>
+										</tr>
+									</thead>
+									<tbody>
+										<!-- BEGIN BLOCK_LINHAS -->
+										<tr>
+											<td>{TITULO}</td>
+											<td>{AUTOR}</td>
+											<td>{DESTAQUE}</td>
+											<td>{STATUS}</td>
+											<td>{TIPO}</td>
+											<td>
+												<a href="listanoticias.php?rep={ID}" alt="Republicar" title="Republicar" >
+													<i class="fa fa-fw fa-share"></i>
+												</a>
+												<a href="listanoticias.php?ex={ID}" alt="Ativar/Desativar" title="Ativar/Desativar" >
+													<i class="fa fa-fw fa-refresh"></i>
+												</a>
+												<a href="editarnoticia.php?id={ID}" alt="Editar" title="Editar" >
+													<i class="fa fa-pencil"></i>
+												</a>
+
+											</td>
+										</tr>
+										<!-- END BLOCK_LINHAS -->
+									</tbody>
+								</table>
+							</section>
+						</div>
+					</div>
+					<div class="panel-footer text-center">
+						<ul class="pagination pagination">
+							<!-- BEGIN BLOCK_PAGINAS -->
+							<li><a href="listanoticias.php?p={P}">{P}</a></li>
+							<!-- END BLOCK_PAGINAS -->
+						</ul>
+					</div>
+				</section>
+			</div>
+		</div>
+	</section>
+</section>
