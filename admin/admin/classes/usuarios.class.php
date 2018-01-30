@@ -9,10 +9,69 @@ class Usuario
 		$this->setNome("");
 		$this->setLogin("");
 		$this->setEmail("");
+		$this->setCep("");
+		$this->setRua("");
+		$this->setCidadeId("");
+		$this->setEstadoId("");
+		$this->setBairro("");
 		$this->setSenha("");
+		$this->setCpf("");
 		$this->setNivel("");
 	}
 
+	public function setCep($cep)
+	{
+		$this->cep = $cep;
+	}
+	public function getCep()
+	{
+		return $this->cep;
+	}
+
+	public function setRua($rua)
+	{
+		$this->rua = $rua;
+	}
+	public function getRua()
+	{
+		return $this->rua;
+	}
+
+	public function setCidadeId()
+	{
+		$this->cidadeid = $cidadeid;
+	}
+	public function getCidadeId()
+	{
+		return $this->cidadeid;
+	}
+
+	public function setEstadoId($estadoid)
+	{
+		$this->cidadeid = $cidadeid;
+	}
+	public function getEstadoId()
+	{
+		return $this->cidadeid;
+	}
+
+	public function setBairro($bairro)
+	{
+		$this->bairro = $bairro;
+	}
+	public function getBairro()
+	{
+		return $this->bairro;
+	}
+
+	public function setCpf($cpf)
+	{
+		$this->cpf = $cpf;
+	}
+	public function getCpf()
+	{
+		return $this->cpf;
+	}
 	public function setID($id)
 	{
 		$this->id = $id;
@@ -121,7 +180,13 @@ class Usuario
 			":login"	=> $this->login,
 			":email"	=> $this->email,
 			":senha"	=> md5($this->senha),
-			":nivel"	=> $this->nivel
+			":nivel"	=> $this->nivel,
+			":cpf" 	=> $this->cpf,
+			":rua" => $this->rua,
+			":cidadeid" => $this->cidadeid,
+			":estadoid" => $this->estadoid,
+			":bairro" 	=> $this->bairro,
+
 		);
 
 		if($validaid = $this->ValidaId() == TRUE){
