@@ -1,0 +1,169 @@
+<section id="main-content">
+	<section class="wrapper">
+		<!-- BEGIN BLOCK_SUCESSO -->
+		<h5 role="alert" class="alert alert-success">
+			<label>
+				{MSG}
+			</label>
+		</h5>
+		<!-- END BLOCK_SUCESSO -->
+		<!-- BEGIN BLOCK_CATCH -->
+		<h5 role="alert" class="alert alert-warning">
+			<label>
+				{MSG}
+			</label>
+		</h5>
+		<!-- END BLOCK_CATCH -->
+		<div class="row">
+			<div class="col-lg-12 col-md-12">
+				<section class="panel">
+					<header class="panel-heading">
+						{ASSUNTOPAG}
+					</header>
+					<form role="form" action="{ACTION}" method="post">
+						<input type="hidden" name="id" value="{IDF}"/>
+						<div class="panel-body">
+							<!-- BEGIN BLOCK_ERROS -->
+							<div role="alert" class="alert alert-danger">
+								<ul>
+									<label>
+										Verifique os seguintes campos:
+									</label>
+									<li>
+										{ERRO1} {ERRO2} {ERRO3} {ERRO4} {ERRO5} {ERRO6} {ERRO7} {ERRO8} {ERRO9}
+									</li>
+								</ul>
+							</div>
+							<!-- END BLOCK_ERROS -->
+							<header class="panel-heading">
+								<small>
+									Dados Básicos
+								</small>
+							</header>
+							<div class="row panel-body">
+								<div class="col-lg-4 col-md-4">
+									<div class="form-group">
+										<label for="nome">
+											Nome Completo
+										</label>
+										<input class="form-control" value="{NOME}" placeholder="Digite o Nome aqui." name="nome" id="nome" maxlength="50" required />
+									</div>
+								</div>
+
+								<div class="col-lg-4 col-md-4">
+									<div class="form-group">
+										<label for="cpf">
+											CNPJ (Somente Números)
+										</label>
+										<input class="mascara-cnpj form-control" placeholder="CNPJ" value="{CNPJ}" name="cnpj" id="cnpj" maxlength="14" required/>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4">
+									<div class="form-group">
+										<label for="email">
+											Email
+										</label>
+										<input class="form-control" type="email" value="{EMAIL}" placeholder="exemplo@sindasp.com.br" name="email" id="email" maxlength="250" />
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3">
+									<div class="form-group">
+										<label for="cel">
+											Telefone (Com DDD)
+										</label>
+										<input class="mascara-celular form-control" value="{CEL}" name="cel" id="cel" maxlength="15" />
+									</div>
+								</div>
+							<header class="panel-heading">
+								<small>
+									Dados Complementares
+								</small>
+							</header>
+							<div class="row panel-body">
+								<div class="col-lg-4 col-md-4">
+									<div class="form-group">
+										<label for="whatsapp">
+											WhatsApp (Com DDD)
+										</label>
+										<input class="mascara-celular form-control" value="{WHATS}" name="whatsapp" id="whatsapp" maxlength="15"/>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4">
+									<div class="form-group">
+										<label for="facebook">
+											Facebook
+										</label>
+										<input class="form-control" value="{FACEBOOK}" placeholder="facebook" name="facebook" id="facebook"/>
+									</div>
+								</div>
+							</div>
+							<header class="panel-heading">
+								<small>
+									Endereço
+								</small>
+							</header>
+							<div class="row panel-body">
+								<div class="col-lg-4 col-md-4">
+									<div class="form-group">
+										<label for="cep">
+											CEP (Somente Números)
+										</label>
+										<input class="form-control mascara-cep" value="{CEP}" name="cep" id="cep" onblur="buscarEndereco(this);" maxlength="9" />
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4">
+									<div class="form-group">
+										<label for="rua">
+											Rua
+										</label>
+										<input class="form-control" value="{RUA}" placeholder="Rua" name="rua" id="rua" maxlength="100" />
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4">
+									<div class="form-group">
+										<label for="num">
+											Número
+										</label>
+										<input class="form-control" value="{NUM}" placeholder="Número" name="num" id="num" maxlength="100" />
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4">
+									<div class="form-group">
+										<label for="bairro">
+											Bairro
+										</label>
+										<input class="form-control" value="{BAIRRO}" placeholder="Bairro" name="bairro" id="bairro" maxlength="100" />
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4">
+									<div class="form-group">
+										<label for="comp">
+											Complemento
+										</label>
+										<input class="form-control" value="{COMP}" placeholder="Complemento" name="comp" id="comp" maxlength="100"/>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4">
+									<div class="form-group">
+										<label for="cidade">
+											Cidade
+										</label>
+										<input class="form-control" value="{ENDERECO}" placeholder="Cidade" name="cidade" id="cidade" maxlength="100" />
+									</div>
+								</div>
+                            </div>
+                           
+						
+							</div>
+						</div>
+						<div class="panel-footer">
+							<button type="submit" name="enviar" id="enviar" class="btn btn-success">
+								Gravar
+							</button>
+						</div>
+					</form>
+				</section>
+			</div>
+		</div>
+	</section>
+</section>

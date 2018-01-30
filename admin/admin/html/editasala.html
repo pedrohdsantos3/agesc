@@ -1,0 +1,47 @@
+<section id="main-content">
+	<section class="wrapper">
+		<!-- BEGIN BLOCK_MSG -->
+		<div role="alert" class="alert alert-info">
+			<label>{MSG}</label>
+		</div>
+		<!-- END BLOCK_MSG -->
+		<div class="row">
+			<div class="col-lg-6">
+				<section class="panel">
+					<header class="panel-heading">
+						Cadastrar nova sala.
+					</header>
+					<form action="{ACTION}" method="post" role="form">
+						<input name="id" type="hidden" value="{ID}" />
+						<div class="panel-body">
+							<div class="position-center">
+								<div class="form-group">
+									<label class="col-2 col-form-label"for="nome">Nome(também pode ser o número)</label>
+									<input class="form-control" id="nome" name="nome" placeholder="Nome da Sala" type="text" value="{NOME}" required maxlength="150" minlength="1" />
+								</div>
+
+								<div class="form-group">
+								  <label class="col-2 col-form-label">Horário de Funcionamento(Abertura)<span class="color-red"> *</span></label>
+								  <div class="col-10">
+								    <input class="form-control" type="time"name="abertura" value="{ABERTURA}" placeholder="08:00" required="">
+								  </div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-2 col-form-label">Horário de Funcionamento(Fechamento)<span class="color-red"> *</span></label>
+									<div class="col-10">
+										<input class="form-control" type="time"name="fechamento" value="{FECHAMENTO}" placeholder="08:00"  required="">
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="panel-footer">
+							<button class="btn btn-success" name="cadastrar" type="submit">Enviar</button>
+						</div>
+					</form>
+				</section>
+			</div>
+		</div>
+	</section>
+</section>

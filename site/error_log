@@ -1,4 +1,0 @@
-[08-Jun-2016 14:02:56 America/Sao_Paulo] PHP Warning:  include(configs/header.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/wwwyousitescom/public_html/site/index.php on line 3
-[08-Jun-2016 14:02:56 America/Sao_Paulo] PHP Warning:  include(configs/header.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/wwwyousitescom/public_html/site/index.php on line 3
-[08-Jun-2016 14:02:56 America/Sao_Paulo] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'configs/header.class.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/wwwyousitescom/public_html/site/index.php on line 3
-[08-Jun-2016 14:02:56 America/Sao_Paulo] PHP Fatal error:  Class 'Redirect' not found in /home/wwwyousitescom/public_html/site/index.php on line 4

@@ -1,0 +1,36 @@
+<!-- sidebar start -->
+<aside>
+	<div class="nav-collapse" id="sidebar">
+		<!-- sidebar menu start-->
+		<div class="leftside-navigation">
+			<ul class="sidebar-menu" id="nav-accordion">
+				<li class="sub-menu">
+					<a href="index.php">
+						<i class="fa fa-fw fa-dashboard"></i><span>Painel</span>
+					</a>
+				</li>
+				<!-- BEGIN BLOCK_MENU -->
+				<li class="sub-menu">
+					<a href="javascript:;" data-target="#{MENUTAG}" >
+						<i class="{ICONE}"></i><span>{MENU}</span>
+					</a>
+					<ul id="{MENUTAG}" class="sub">
+					<!-- BEGIN BLOCK_ITENSMENU -->
+						<li>
+							<a href="{PHP_PAG}">
+								<i class="{ICON_PAGE}"></i>
+								{PAG_NOME}
+							</a>
+						</li>
+						<!-- END BLOCK_ITENSMENU -->
+
+					</ul>
+				</li>
+				<!-- END BLOCK_MENU -->
+
+			</ul>
+		</div>
+		<!-- sidebar menu end-->
+	</div>
+</aside>
+<!--sidebar end-->
