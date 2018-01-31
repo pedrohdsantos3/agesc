@@ -1,8 +1,12 @@
 <?php
 
+try{
 
+$pdo = new PDO('mysql:host=localhost;dbname=radyn_db','root','');
+} catch (PDOException $e) {
 
-$pdo = new PDO('mysql:host=mysql873.umbler.com;dbname=agesc','agescbds','s91635304');
-
+    echo $e->getMessage();
+    exit;
+  }
 
 ?>
